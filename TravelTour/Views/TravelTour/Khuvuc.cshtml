@@ -1,0 +1,7 @@
+﻿@model IEnumerable<TravelTour.Models.CHUDEKV>
+@foreach (var item in Model)
+{
+<a href="@Url.Action("SPTheoKV","TravelTour", new { id = item.MaCDKV})" class="tour-tab__item" style="text-decoration:none">
+    @item.TenChuDe
+</a>
+}

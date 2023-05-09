@@ -1,0 +1,113 @@
+﻿@model TravelTour.Models.Tour
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Detail</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên tour:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenTour)
+        </dd>
+
+        <dt>
+            Giá bán:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Giaban)
+        </dd>
+
+        <dt>
+            Mô tả chi tiết:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mota)
+        </dd>
+
+        <dt>
+            Hình:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Anhbia)
+        </dd>
+
+        <dt>
+            Thời gian khởi hành:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Thoigian)
+        </dd>
+
+        <dt>
+            Số lượng còn:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Soluongcon)
+        </dd>
+
+        <dt>
+            Đơn vị vận chuyển:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vanchuyen)
+        </dd>
+
+        <dt>
+            Ngày khởi hành:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngaykhoihanh)
+        </dd>
+
+        <dt>
+            Ngày về:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngayve)
+        </dd>
+
+        <dt>
+            Trong/Ngoài nước:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHUDE.TenChuDe)
+        </dd>
+
+        <dt>
+            Khu vực:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHUDEKV.TenChuDe)
+        </dd>
+
+        <dt>
+            Khu vực Ngoài nước:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHUDEKVNN.TenChuDe)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Quay lại", "Tour")
+</p>

@@ -1,0 +1,112 @@
+﻿@model TravelTour.Models.Tour
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenTour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenTour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Giaban)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Giaban)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mota)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mota)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Anhbia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Anhbia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Thoigian)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Thoigian)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Soluongcon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Soluongcon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vanchuyen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vanchuyen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngaykhoihanh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngaykhoihanh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaCD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHUDE.TenChuDe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaCDKV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHUDEKV.TenChuDe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaCDKVNN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHUDEKVNN.TenChuDe)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Quay lại", "Tour")
+        </div>
+    }
+</div>

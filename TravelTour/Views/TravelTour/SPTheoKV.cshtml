@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "SPTheoKV";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<div class="product-breadcroumb">
+    <a href="@Url.Action("Index","TravelTour")">Trang chủ /</a>
+    <div class=" row" style="display:flex;flex-wrap:wrap">
+        <br>
+        @foreach (var tour in Model)
+        {
+            <div class="col-sm-4 col-lg-4 col-md-4">
+                <div class="grid__row container__footer">
+                    <div class="grid__colum-4 container__experience" style="height:100%;width:100%;margin-left:10px">
+                        <div class="container__experience-img">
+                            <img src="~/Content/img/@tour.Anhbia" />
+                        </div>
+                        <div class="container__experience-content" style="width:100%;display:flex;justify-content:space-between;align-items:center;padding:0 2rem 0;background:#82ccdd;border-radius:0 0 8px 8px;">
+                            <ul>
+                                <li><span class="container__experience-tittle" style="height:50px">Tour: @tour.TenTour</span></li>
+                                <li><span class="container__experience-text">Thời gian: @tour.Thoigian</span></li>
+                                <li><span class="container__experience-price">Giá tiền: @tour.Giaban</span></li>
+                                <li><span class="container__experience-rest" style=" display: block; font-size: 1.5rem; margin: 12px 10px">Còn lại: @tour.Soluongcon</span></li>
+                            </ul>
+                            <a href="@Url.Action("Detail","TravelTour", new { id=tour.MaTour})" class="container__experience-btn" style="text-decoration: none; color: var(--black-color); background-color: rgba(96, 163, 188, 0.76); padding: 2px 4px; border-radius: 5px;">Xem chi tiet</a>
+                     
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

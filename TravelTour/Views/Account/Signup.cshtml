@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "Signup";
+    Layout = "~/Views/Shared/_LayoutAccount.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Đăng ký - KC-Travel</title>
+    <link rel="stylesheet" href="~/Content/signup.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>Đăng ký</header>
+        <div class="form-outer">
+                @using (Html.BeginForm())
+                {
+                    <div class="title">Nhập Thông Tin:</div>
+                    @Html.ValidationSummary(true)
+                    <div class="field">
+                        <p>Họ và tên:</p>
+                        @Html.TextBox("HotenKH")
+                        @ViewData["Loi1"]
+                    </div>
+                    <div class="field">
+                        <p>Địa chỉ Email:</p>
+                        @Html.TextBox("Email")
+                        @ViewData["Loi2"]
+                    </div>
+
+                    <div class="password">
+                        <p>Mật Khẩu:</p>
+                        @Html.Password("Matkhau")
+                        @ViewData["Loi4"]
+                    </div>
+                    <div class="field">
+                        <p>Nhập lại Mật Khẩu:</p>
+                        @Html.Password("Nlmatkhau")
+                        @ViewData["Loi5"]
+                    </div>
+                    <div class="field">
+                        <p>Số điện thoại:</p>
+                        @Html.TextBox("Dienthoai")
+                        @ViewData["Loi6"]
+                    </div>
+                    <div class="field">
+                        <p>Địa chỉ:</p>
+                        @Html.TextBox("Diachi")
+                        @ViewData["Loi7"]
+                    </div>
+                    <div class="field">
+                        <p>Ngày sinh:</p>
+                        <input type="date" name="Ngaysinh" />
+                    </div>
+                    <br>
+                    <input type="Submit" value="Signup" />
+
+                }
+
+        </div>
+    </div>
+
+</body>
+</html>
+
+

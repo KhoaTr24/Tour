@@ -1,0 +1,70 @@
+﻿@using TravelTour.Models
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/reset.css">
+    <link rel="stylesheet" href="~/Content/style.css">
+    <link rel="stylesheet" href="~/Content/base.css">
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+</head>
+<body>
+    <div>
+        
+            @{Admin ad = (Admin)Session["AccountAdmin"];}
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="@Url.Action("Index")">ADMIN</a></li>
+                    <li>@Html.ActionLink("QUẢN LÝ TOUR", "Tour", "Admin")</li>
+                    <li>@Html.ActionLink("QUẢN LÝ TÀI KHOẢN", "QLTK", "Admin")</li>                  
+                    <li>@Html.ActionLink("QUẢN LÝ ĐƠN HÀNG", "QLDH", "Admin")</li>
+                    <li>
+                        <div class="header__user-box">
+                            @if (Session["AccountAdmin"] != null)
+                            {
+                                <i class="fas fa-bars header__icon-bars"></i>
+                                <i class="fas fa-user-circle header__icon-user"></i>
+                                <div class="header__user-choice">
+                                    <p>Xin chào, <strong>@ad.Hoten</strong></p>
+                                    <a href="@Url.Action("Logout","Admin")">
+                                        <p>Đăng xuất</p>
+                                    </a>
+                                </div>
+                            }
+                        </div>
+
+                    </li>
+
+                </ul>
+            </div>
+
+
+            <section>
+                <div class="container">
+                    @RenderBody()
+                </div>
+            </section>
+
+    </div>
+    <!-- -----Begin Footer----- -->
+
+    <!-- -----End Footer----- -->
+    <!-- Hiệu ứng scroll của thanh navbar -->
+    <script type="text/javascript">
+        window.addEventListener
+            ("scroll", function () {
+                var header = document.querySelector("header");
+                header.classList.toggle("sticky", window.scrollY > 0);
+            })
+    </script>
+</body>
+</html>
